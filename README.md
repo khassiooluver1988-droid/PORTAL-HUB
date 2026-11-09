@@ -1,58 +1,70 @@
 # PORTAL-HUB
 
-Repositório de desenvolvimento do **HUB NOTÍCIA**, portal jornalístico voltado ao Piauí, Brasil e mundo.
+Repositório de desenvolvimento do **Hub Notícias**, portal jornalístico voltado ao Piauí, Brasil e mundo.
 
-> **Status:** estrutura editorial organizada em prévia local. O portal não está publicado por este repositório e não há implantação automática autorizada.
+> **Status:** código do portal incluído em `index.html`. A atualização do GitHub não configura hospedagem nem publicação automática.
+
+## Versão incluída
+
+- 41 notícias com fotografias, resumos editoriais, datas e acesso às publicações originais.
+- Quatro enquetes, com indicação das encerradas e votação na publicação original.
+- Identificação editorial como Hub Notícias.
+- Menu lateral expansível, busca, destaque e leitura dos resumos em janela interna.
+- Política, Policial, Educação, Internacional, Esportes e Emprego: seis matérias por editoria; Segurança: quatro; Economia: uma.
+- As notícias anteriores foram preservadas. O acervo internacional mantém suas datas originais.
+
+## Como visualizar
+
+Abra `index.html` em um navegador. O arquivo inclui os estilos, o código da interface e os dados editoriais. As fotografias de notícias são carregadas dos endereços originais e dependem de conexão à internet. Não há etapa de compilação.
 
 ## Editorias e navegação
 
-O menu lateral é expansível e preserva as categorias preexistentes.
+O menu lateral preserva as categorias preexistentes. Nem todas as editorias têm matérias nesta seleção inicial.
 
 ### Grupo principal: Notícias e Opinião
-- Política
-- Economia
-- Opinião
-- Brasil
-- Mundo
-- Cidadania
-- Ideias
-- Agronegócio
-- Saber
-- Últimas Notícias (listagem cronológica, sem duplicar a categoria)
+
+Política, Economia, Opinião, Brasil, Mundo, Cidadania, Ideias, Agronegócio, Saber e Últimas Notícias.
 
 ### Editorias preservadas do HUB
-Cidades, Polícia, Segurança, Esportes, Curiosidades, Brasília em Foco, Saúde, Tecnologia, Meio Ambiente, Cultura, Educação, Geral, Motivação e Espaço do Empreendedor, além das editorias já listadas no grupo principal.
+
+Cidades, Polícia, Policial, Segurança, Esportes, Curiosidades, Brasília em Foco, Saúde, Tecnologia, Meio Ambiente, Cultura, Educação, Internacional, Emprego, Geral, Motivação e Espaço do Empreendedor, além das editorias do grupo principal.
 
 ### Serviços
-Municípios do Piauí, enquetes, vagas e concursos, loterias e HUB Solidário, conforme a estrutura existente da prévia.
+
+Municípios do Piauí, enquetes, oportunidades de emprego e qualificação, loterias e HUB Solidário. Serviços ainda sem integração exibem seu estado ou acesso à fonte responsável.
 
 ### Institucional
-Ler e Pensar, Fale Conosco, Termos de Uso e Política de Privacidade. Demais páginas institucionais existentes devem ser preservadas.
 
-## Estrutura de páginas
+O plano institucional prevê Ler e Pensar, Fale Conosco, Termos de Uso e Política de Privacidade. A versão atual mantém os elementos institucionais do HTML recebido; o plano completo permanece documentado em `docs/FLUXO_EDITORIAL.md`.
 
-- **Início:** manchete principal, chamadas, editorias, serviços e oportunidades.
-- **Categoria:** destaque, listagem de matérias, resumo e acesso à matéria completa.
-- **Notícia:** título, categoria, conteúdo, fonte e navegação contextual.
-- **Últimas notícias:** publicações em ordem cronológica.
-- **Institucional:** páginas de serviço e informações do portal.
+## Fluxo editorial
 
-## Fluxo editorial previsto
+Nesta versão, as matérias estão incorporadas ao HTML; não existe atualização automática do acervo. Cada cartão abre um resumo editorial, com fotografia, crédito disponível e link à publicação original. A busca e as listagens consultam os 41 registros incluídos.
 
-Cadastro/publicação da matéria → associação à categoria → atualização da listagem da categoria → atualização cronológica da página inicial → abertura da notícia completa.
+O fluxo futuro de cadastro → associação à categoria → atualização da home depende de integração com um sistema editorial. Nenhuma conexão com banco de dados ou painel de publicação foi configurada por esta atualização.
 
-**Integração externa:** notícias do Conecta Piauí ainda não foram integradas ou validadas. Não reproduzir conteúdo integral de terceiros sem autorização ou licença; utilizar links, atribuição e resumos originais quando pertinente.
+## Conteúdo e créditos
+
+Os textos incorporados são resumos editoriais; não reproduzem integralmente as reportagens originais. Os links de origem e os créditos disponíveis das imagens foram preservados. A identificação do Hub na interface designa a seleção e os resumos editoriais, não a autoria da apuração de terceiros.
 
 ## Controle de alterações
 
-1. Não excluir ou substituir conteúdos sem aprovação.
-2. Preservar o arquivo original e as versões anteriores.
-3. Desenvolver em prévia/branch de trabalho, revisar desktop e celular.
-4. Não implantar ou publicar no portal sem autorização expressa.
-5. Registrar mudanças e checar links e atualizações por categoria.
+1. Preservar o histórico e os conteúdos existentes.
+2. Revisar o resultado antes de alterações de hospedagem ou publicação.
+3. Não excluir matérias nem implantar o portal sem autorização expressa.
+4. Registrar alterações e conferir links, categorias e integridade dos arquivos.
 
-## Arquivos do projeto
+## Registro da atualização
 
-O arquivo HTML da última prévia está disponível na conversa do projeto, **mas ainda não foi enviado a este repositório**. Este README documenta as decisões editoriais até a integração do código.
+**HUB-009 — sincronização do GitHub**  
+**Data:** 08/11/2026, 22:56 (Brasília).  
+**Motivo:** enviar ao repositório a versão editorial solicitada pelo responsável.  
+**Base:** HUB-008, de 08/11/2026, 22:48 (Brasília).
 
-Referência de organização: `HUB-MENU-20261108-01` (provisória; sequência prévia não verificada).
+- [x] Incluir o portal como `index.html`.
+- [x] Preservar as 41 notícias e as quatro enquetes.
+- [x] Atualizar esta documentação.
+- [x] Conferir a sintaxe JavaScript e a integridade do HTML enviado.
+- [ ] Configurar hospedagem e publicar o portal.
+
+Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, conforme registro original).
