@@ -68,3 +68,19 @@ Os textos incorporados são resumos editoriais; não reproduzem integralmente as
 - [ ] Configurar hospedagem e publicar o portal.
 
 Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, conforme registro original).
+
+
+## HUB-010 — publicação editorial de Política
+**Data:** 10/11/2026, 14h02 (horário de Brasília).
+**Código:** PUB-HUB-010-10112026-MORAES.
+**Status:** implantação do GitHub Pages concluída; acesso público ainda sujeito a propagação/cache.
+**Motivo:** publicar matéria autoral e destacá-la na homepage sem alterar as 41 notícias anteriores e as quatro enquetes.
+
+- [x] Matéria de Política sobre articulações parlamentares envolvendo impeachment de Alexandre de Moraes em 2027.
+- [x] Revisão dos nomes citados e contextualização da próxima legislatura.
+- [x] Fontes originais identificadas (Gazeta do Povo, Senado Federal e Lei nº 1.079/1950).
+- [x] Página dedicada, capa ilustrativa original em SVG e bloco de destaque responsivo na home.
+- [x] Fluxo de publicação do GitHub Pages atualizado preservando o `index.html` no repositório.
+- [x] Execução do GitHub Actions 42860681411 finalizada com sucesso.
+- [ ] Conferência visual em navegadores desktop/mobile e teste de compartilhamento com imagem raster.
+**Observação:** o Supabase do HUB ainda não está conectado ao portal estático; a nova matéria não foi inserida no acervo dinâmico da categoria Política.
