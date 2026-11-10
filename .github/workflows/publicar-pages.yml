@@ -10,6 +10,7 @@ on:
       - 'assets/**'
       - destaque-impeachment-moraes.js
       - hub-cabecalho-social.js
+      - hub-leitura-interna.js
       - '.github/workflows/publicar-pages.yml'
   workflow_dispatch:
 
@@ -34,6 +35,8 @@ jobs:
           cp -R assets _site/assets
           cp destaque-impeachment-moraes.js _site/destaque-impeachment-moraes.js
           cp hub-cabecalho-social.js _site/hub-cabecalho-social.js
+          cp hub-leitura-interna.js _site/hub-leitura-interna.js
+          node --check _site/hub-leitura-interna.js
           node --check _site/hub-cabecalho-social.js
           python3 - <<'PY'
           from pathlib import Path
@@ -53,6 +56,13 @@ jobs:
               if selector not in content:
                   raise SystemExit('Seletor esperado ausente: ' + selector)
           assert 'hub-cabecalho-social.js?v=014' in html.read_text(encoding='utf-8')
+          internal = '<script defer src="./hub-leitura-interna.js?v=015"></script>'
+          if internal not in content:
+              content = content.replace('</body>', internal + '\n</body>', 1)
+              html.write_text(content, encoding='utf-8')
+          assert internal in html.read_text(encoding='utf-8')
+          assert Path('_site/artigos/sebastiana-86-anos-direito-enem-2026.html').is_file()
+
           assert 'destaque-impeachment-moraes.js' in html.read_text(encoding='utf-8')
           PY
           test -s _site/artigos/impeachment-moraes-senado-2027.html
