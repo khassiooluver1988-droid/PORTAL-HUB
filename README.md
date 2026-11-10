@@ -120,3 +120,19 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 - [x] Deploy executado com sucesso; acervo anterior do index.html preservado.
 - [ ] Conferência visual em desktop/celular e verificação de prévia social em aplicativos externos.
 **Nota:** a matéria permanece publicada por página estática; sem inserção na base editorial Supabase.
+
+
+## HUB-013 — ajuste de enquadramento da imagem no artigo e destaque
+**Data:** 10/11/2026, 16h07 (Brasília).
+**Código:** ATU-IMG/HUB-10112026-1607-013.
+**Projeto:** HUB NOTÍCIA.
+**Motivo:** corrigir o corte da imagem cinematográfica na matéria de Política e no destaque da página inicial, sem alterar a arte e sem modificar outros conteúdos.
+**Status:** alteração concluída no repositório e implantação GitHub Pages nº 42881936677 concluída com sucesso. Conferência visual independente em dispositivos reais pendente.
+
+- [x] Corrigir a capa da notícia: `height:auto`, `object-fit:contain`, proporção original sem recorte e sem deformação.
+- [x] Corrigir o destaque da home: remover restrições de altura, trocar `cover` por `contain` e centralizar a imagem.
+- [x] Remover o corte forçado de 175 pixels em dispositivos móveis; a imagem agora adapta sua altura.
+- [x] Preservar a imagem cinematográfica aprovada em `assets/capa-congresso-moraes.avif`.
+- [x] Preservar a headline, texto, menu e acervo existente.
+- [x] Conferir os arquivos modificados e o resultado de sucesso da implantação.
+- [ ] Testar visualmente em navegadores desktop e celular após propagação do Pages.
