@@ -143,7 +143,7 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 **Código:** ATU-CAB/HUB-10112026-2025-016.
 **Projeto:** HUB NOTÍCIA.
 **Motivo:** reduzir o tamanho visual dos cinco ícones sociais acima da busca após retorno do responsável.
-**Status:** arquivo e workflow atualizados no GitHub; publicação GitHub Pages em conferência (run 42923206453).
+**Status:** publicação GitHub Pages confirmada com sucesso (run 42923206453); conferência visual em dispositivos reais pendente.
 
 - [x] Redimensionar contêineres dos ícones no desktop de 31 para 23 px.
 - [x] Redimensionar contêineres dos ícones no mobile de 28 para 22 px e em telas estreitas de 26 para 20 px.
