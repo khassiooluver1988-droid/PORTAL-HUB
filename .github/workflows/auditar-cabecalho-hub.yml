@@ -1,0 +1,51 @@
+name: Auditoria temporaria cabecalho HUB
+on:
+  push:
+    paths:
+      - '.github/workflows/auditar-cabecalho-hub.yml'
+permissions:
+  contents: write
+jobs:
+  inspeccionar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extrair trechos para ajuste seguro
+        run: |
+          python3 - <<'PY'
+          import pathlib,re,html
+          s=pathlib.Path("index.html").read_text(encoding="utf-8")
+          lines=s.splitlines()
+          needles=['<header','</header','search','buscar','pesquisa','sidebar','sidemenu','menu-toggle','nav-toggle','id="menu','class="menu','aria-label="menu','menu-btn','menuItem','menu-item','social']
+          out=[f'Total characters: {len(s)} lines: {len(lines)}']
+          for i,line in enumerate(lines):
+              ml=[x for x in needles if x.lower() in line.lower()]
+              if ml and (i<1000):
+                  out.append('LINE '+str(i+1)+' MATCH '+','.join(ml)+' TEXT '+line[:550])
+                  if len(out)>170:break
+          from html.parser import HTMLParser
+          class Audit(HTMLParser):
+              def __init__(self):
+                  super().__init__();self.header=0;self.records=[]
+              def handle_starttag(self,tag,attrs):
+                  d=dict(attrs)
+                  if tag=='header':self.header+=1
+                  if self.header and len(self.records)<200:
+                      t={k:v for k,v in attrs if k in ('class','id','aria-label','placeholder','href','type','role','title','onclick')}
+                      self.records.append(f'TAG {tag}: {str(t)[:270]}')
+              def handle_endtag(self,tag):
+                  if tag=='header' and self.header:self.header-=1
+          a=Audit();a.feed(s)
+          out+=['===== HEADER DOM =====']+a.records
+          out+=['===== SELECTORS =====']
+          for m in list(re.finditer(r'(?i)(?:class|id|placeholder|aria-label)=[\x22\x27][^\x22\x27]*(?:menu|nav|search|buscar|pesquisa|social|header)[^\x22\x27]*[\x22\x27]',s))[:75]:
+              out.append(s[max(0,m.start()-115):m.end()+145].replace('\n',' ')[:400])
+          p=pathlib.Path('docs/auditoria-cabecalho-temp.txt')
+          p.parent.mkdir(exist_ok=True)
+          p.write_text('\n'.join(out)[:43000],encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/auditoria-cabecalho-temp.txt
+          git commit -m "Diagnosticar elementos do cabeçalho HUB" || true
+          git push origin HEAD:main
