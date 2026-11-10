@@ -9,6 +9,7 @@ on:
       - 'artigos/**'
       - 'assets/**'
       - destaque-impeachment-moraes.js
+      - hub-cabecalho-social.js
       - '.github/workflows/publicar-pages.yml'
   workflow_dispatch:
 
@@ -32,6 +33,8 @@ jobs:
           cp -R artigos _site/artigos
           cp -R assets _site/assets
           cp destaque-impeachment-moraes.js _site/destaque-impeachment-moraes.js
+          cp hub-cabecalho-social.js _site/hub-cabecalho-social.js
+          node --check _site/hub-cabecalho-social.js
           python3 - <<'PY'
           from pathlib import Path
           html = Path('_site/index.html')
@@ -42,6 +45,14 @@ jobs:
                   raise SystemExit('HTML sem fechamento de body; publicacao bloqueada')
               content = content.replace('</body>', tag + '\n</body>', 1)
               html.write_text(content, encoding='utf-8')
+          script = '<script defer src="./hub-cabecalho-social.js?v=014"></script>'
+          if script not in content:
+              content = content.replace('</body>', script + '\n</body>', 1)
+              html.write_text(content, encoding='utf-8')
+          for selector in ['class="head-right"', 'id="search-form"', 'id="menu-drawer"']:
+              if selector not in content:
+                  raise SystemExit('Seletor esperado ausente: ' + selector)
+          assert 'hub-cabecalho-social.js?v=014' in html.read_text(encoding='utf-8')
           assert 'destaque-impeachment-moraes.js' in html.read_text(encoding='utf-8')
           PY
           test -s _site/artigos/impeachment-moraes-senado-2027.html
