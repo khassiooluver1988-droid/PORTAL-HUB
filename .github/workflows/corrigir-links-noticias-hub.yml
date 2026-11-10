@@ -74,7 +74,6 @@ jobs:
           git commit -m "HUB-015: validar navegação interna das notícias" || true
           git push origin HEAD:main
           exit $rc
-)
           after,count=pat.subn(lambda _:new_func,before)
           if count!=1:raise SystemExit(f'Esperada 1 função openPost, encontradas {count}; abortando')
           external_link=re.compile(r"""\$\('#modal-source'\)\.innerHTML='<a class="outline-btn" href="https://conectapiaui\.com\.br/emprego/" target="_blank" rel="noopener noreferrer">Consultar oportunidades na fonte original ↗</a>'""")
