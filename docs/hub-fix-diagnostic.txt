@@ -1,0 +1,2 @@
+Esperada 1 função openPost, encontradas 0; abortando
+Status Python: 1
