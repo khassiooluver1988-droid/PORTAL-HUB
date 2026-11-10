@@ -48,14 +48,14 @@ jobs:
                   raise SystemExit('HTML sem fechamento de body; publicacao bloqueada')
               content = content.replace('</body>', tag + '\n</body>', 1)
               html.write_text(content, encoding='utf-8')
-          script = '<script defer src="./hub-cabecalho-social.js?v=014"></script>'
+          script = '<script defer src="./hub-cabecalho-social.js?v=016"></script>'
           if script not in content:
               content = content.replace('</body>', script + '\n</body>', 1)
               html.write_text(content, encoding='utf-8')
           for selector in ['class="head-right"', 'id="search-form"', 'id="menu-drawer"']:
               if selector not in content:
                   raise SystemExit('Seletor esperado ausente: ' + selector)
-          assert 'hub-cabecalho-social.js?v=014' in html.read_text(encoding='utf-8')
+          assert 'hub-cabecalho-social.js?v=016' in html.read_text(encoding='utf-8')
           internal = '<script defer src="./hub-leitura-interna.js?v=015"></script>'
           if internal not in content:
               content = content.replace('</body>', internal + '\n</body>', 1)
