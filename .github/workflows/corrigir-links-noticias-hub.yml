@@ -27,7 +27,54 @@ jobs:
             try {if(p.source_url)sourceName=new URL(p.source_url).hostname.replace(/^www\./,'')} catch(e) {}
             $('#modal-source').innerHTML='<div class="modal-source"><small>Fonte consultada: '+esc(sourceName)+' · Publicação de '+esc(formatDate(p.published_at))+'. Resumo editorial do HUB NOTÍCIA, sem redirecionamento para outro portal.</small>'+(p.notice?'<div class="notice-label">'+esc(p.notice)+'</div>':'')+(p.id==='hub-24'?'<p><a class="outline-btn" href="https://rh.g3pi.app.br/" target="_blank" rel="noopener noreferrer">Acessar recrutamento oficial da G3 ↗</a></p>':'')+'</div>';
           }"""
-          pat=re.compile(r'(?m)^  function openPost\(p\)\{[^\r\n]*$')
+          pat=re.compile(r'(?m)^[ \t]*function\s+openPost\s*\(p\)\s*\{[^\r\n]*
+          after,count=pat.subn(lambda _:new_func,before)
+          if count!=1:raise SystemExit(f'Esperada 1 função openPost, encontradas {count}; abortando')
+          external_link=re.compile(r"""\$\('#modal-source'\)\.innerHTML='<a class="outline-btn" href="https://conectapiaui\.com\.br/emprego/" target="_blank" rel="noopener noreferrer">Consultar oportunidades na fonte original ↗</a>'""")
+          new_info="""$('#modal-source').innerHTML='<p class="notice-label">Ainda não há concursos com inscrições abertas verificados nesta seleção. Acompanhe a editoria Emprego e as atualizações do HUB NOTÍCIA.</p>'"""
+          after,count2=external_link.subn(lambda _:new_info,after)
+          if count2!=1:raise SystemExit(f'Esperado 1 link de concursos do Conecta, encontrados {count2}; abortando')
+          safeguard=r"""  // Impede que novos links acidentais para Conecta retirem o leitor do HUB.
+          document.addEventListener('click',function(e){
+            const anchor=e.target.closest('a[href]');
+            if(!anchor)return;
+            let host;
+            try{host=new URL(anchor.href,location.href).hostname.toLowerCase()}catch(err){return}
+            if(host==='conectapiaui.com.br'||host.endsWith('.conectapiaui.com.br')){
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              toast('Navegação externa desativada. Leia as notícias no HUB NOTÍCIA.');
+            }
+          },true);
+          """
+          marker="  renderHero();renderPolitica();renderEditorial();renderCities();renderMore();weather();"
+          if after.count(marker)!=1:raise SystemExit('Marcador único de inicialização não encontrado')
+          after=after.replace(marker,safeguard+marker,1)
+          if 'LER PUBLICAÇÃO ORIGINAL' in after:raise SystemExit('CTA externo antigo ainda presente')
+          if before.count('"id": "hub-')!=after.count('"id": "hub-'):raise SystemExit('Quantidade de notícias divergente')
+          if before.count('"source_url":')!=after.count('"source_url":'):raise SystemExit('Referências editoriais alteradas')
+          if len(after)<len(before)-4000:raise SystemExit('Redução inesperada do arquivo')
+          scripts=re.findall(r'<script(?:\s[^>]*)?>([\s\S]*?)</script>',after,re.I)
+          if not scripts:raise SystemExit('Scripts internos não encontrados')
+          with tempfile.TemporaryDirectory() as td:
+            for i,script in enumerate(scripts):
+              if not script.strip():continue
+              temp=Path(td)/f'validate-{i}.js';temp.write_text(script,encoding='utf-8')
+              val=subprocess.run(['node','--check',str(temp)],capture_output=True,text=True)
+              if val.returncode:raise SystemExit('JS inválido: '+val.stderr[-1600:])
+          file.write_text(after,encoding='utf-8')
+          print('Validação passou; notícias:',before.count('"id": "hub-'),'referências:',before.count('"source_url":'),'tamanho:',len(after))
+          PY
+          rc=$?
+          echo "Status Python: $rc" >> docs/hub-fix-diagnostic.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html docs/hub-fix-diagnostic.txt
+          git diff --cached --stat
+          git commit -m "HUB-015: validar navegação interna das notícias" || true
+          git push origin HEAD:main
+          exit $rc
+)
           after,count=pat.subn(lambda _:new_func,before)
           if count!=1:raise SystemExit(f'Esperada 1 função openPost, encontradas {count}; abortando')
           external_link=re.compile(r"""\$\('#modal-source'\)\.innerHTML='<a class="outline-btn" href="https://conectapiaui\.com\.br/emprego/" target="_blank" rel="noopener noreferrer">Consultar oportunidades na fonte original ↗</a>'""")
