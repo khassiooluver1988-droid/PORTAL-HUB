@@ -175,11 +175,12 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 **Código:** ATU-CAB/HUB-10112026-2034-018.
 **Projeto:** HUB NOTÍCIA.
 **Motivo:** atender à solicitação de subir um pouco mais os cinco ícones sociais acima da busca.
-**Status:** código publicado no repositório; workflow de implantação nº 42924397493 em verificação.
+**Status:** implantação GitHub Pages nº 42924397493 concluída com sucesso; verificação visual em dispositivos reais pendente.
 
 - [x] Elevar o bloco de redes sociais em mais 7 px (desktop: top de -5px para -12px).
 - [x] Elevar o bloco em mais 7 px no celular (top de -40px para -47px).
 - [x] Manter tamanhos aprovados dos ícones, disposição horizontal, cores e espaçamento.
 - [x] Preservar campo Buscar, menu, publicações e acervo existente.
 - [x] Atualizar cache do script para v=018.
-- [ ] Confirmar GitHub Pages e conferir visualmente os dispositivos.
+- [x] Confirmar GitHub Pages nº 42924397493 concluído com sucesso.
+- [ ] Conferir visualmente em desktop e dispositivos móveis.
