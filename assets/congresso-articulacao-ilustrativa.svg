@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="ttl desc">
+<title id="ttl">Congresso Nacional e debate político</title>
+<desc id="desc">Ilustração editorial de plenário, bandeira brasileira e silhuetas de dois personagens diante do Congresso Nacional.</desc>
+<defs>
+<linearGradient id="sky" x2="0" y2="1"><stop stop-color="#0e528c"/><stop offset=".58" stop-color="#82c7ed"/><stop offset="1" stop-color="#dcecf6"/></linearGradient>
+<linearGradient id="floor" x2="0" y2="1"><stop stop-color="#174e70"/><stop offset="1" stop-color="#0c2039"/></linearGradient>
+<linearGradient id="sun" x2="0" y2="1"><stop stop-color="#fff6ca"/><stop offset="1" stop-color="#fff6ca" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#sky)"/>
+<circle cx="815" cy="130" r="170" fill="url(#sun)" opacity=".85"/>
+<g fill="#fff" opacity=".6"><path d="M55 118q75-75 145-5 100-60 155 1-120 9-300 4Z"/><path d="M700 75q70-68 136 0 112-72 195 1-165 10-331-1Z"/><path d="M898 200q64-48 122 3 70-45 145 0Z"/></g>
+<path d="M280 375h640v134H280z" fill="#dce7ee"/>
+<path d="M493 116h90v250h-90z" fill="#e1e8ec"/>
+<path d="M585 116h90v250h-90z" fill="#f3f5f6"/>
+<path d="M566 116h19v260h-19z" fill="#7b9fbc"/>
+<g fill="#83a9c4"><path d="M493 140h90v8h-90zm0 42h90v8h-90zm0 42h90v8h-90zm0 42h90v8h-90zm0 42h90v8h-90z"/><path d="M585 140h90v8h-90zm0 42h90v8h-90zm0 42h90v8h-90zm0 42h90v8h-90zm0 42h90v8h-90z"/></g>
+<path d="M220 375a205 95 0 0 1 410 0Z" fill="#eef5f7"/>
+<path d="M675 376a205 95 0 0 1 410 0Z" fill="#e8f0f4"/>
+<path d="M210 375h890v18H210z" fill="#668daa"/>
+<path d="M185 394h930v126H185z" fill="#9cb8cb"/>
+<g stroke="#d7e8f2" stroke-width="11"><path d="M210 405v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115m50-115v115"/></g>
+<rect y="512" width="1200" height="163" fill="url(#floor)"/>
+<g transform="translate(577 470)"><path d="M0 18v175" stroke="#d5ae65" stroke-width="7"/><path d="M4 23l90 28-90 29z" fill="#16935c"/><path d="M5 48l62 10-62 13z" fill="#f5d442"/></g>
+<g fill="#102640" opacity=".96"><path d="M0 675V358q38-52 83-46 48 0 80 73l39 113 130 177Z"/><path d="M800 675l65-160q-10-51 29-75 35-28 80-10 66 6 88 76l138 169z"/></g>
+<circle cx="95" cy="307" r="63" fill="#b98765"/><path d="M45 303q11-89 93-59 28 23 20 60-30-31-113-1z" fill="#22354b"/>
+<circle cx="961" cy="398" r="52" fill="#c4916b"/><path d="M909 411q39 20 101-5l47 155-174 14z" fill="#111e31"/>
+<path d="M0 605q325-45 620-12t580 13v69H0z" fill="#08172b" opacity=".22"/>
+</svg>
