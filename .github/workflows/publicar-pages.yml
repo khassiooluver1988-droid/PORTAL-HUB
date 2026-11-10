@@ -1,0 +1,28 @@
+name: Atualizar GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - .nojekyll
+      - '.github/workflows/publicar-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+
+concurrency:
+  group: publicar-hub-pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Solicitar publicação da versão atual
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: gh api --method POST "repos/$GH_REPO/pages/builds"
