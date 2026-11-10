@@ -158,7 +158,7 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 **Código:** ATU-CAB/HUB-10112026-2029-017.
 **Projeto:** HUB NOTÍCIA.
 **Motivo:** elevar ligeiramente os ícones sociais no canto superior direito, mantendo seu tamanho reduzido e o campo de pesquisa inalterado.
-**Status:** código atualizado no repositório; validação de implantação GitHub Pages nº 42923744821 pendente de confirmação.
+**Status:** implantação GitHub Pages nº 42923744821 concluída com sucesso; conferência visual em dispositivos reais ainda pendente.
 
 - [x] Elevar os ícones em 5px no desktop.
 - [x] Ajustar o posicionamento mobile de -35px para -40px, equivalente a 5px acima.
@@ -166,4 +166,5 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 - [x] Manter as redes acima da busca, no lado direito.
 - [x] Preservar menu, busca e notícias.
 - [x] Atualizar versão de cache do script do cabeçalho para v=017.
-- [ ] Confirmar sucesso do deploy e verificar visualmente em desktop/mobile.
+- [x] Confirmar sucesso do deploy nº 42923744821.
+- [ ] Conferir visualmente em desktop/mobile.
