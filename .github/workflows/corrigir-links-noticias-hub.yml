@@ -27,7 +27,7 @@ jobs:
             try {if(p.source_url)sourceName=new URL(p.source_url).hostname.replace(/^www\./,'')} catch(e) {}
             $('#modal-source').innerHTML='<div class="modal-source"><small>Fonte consultada: '+esc(sourceName)+' · Publicação de '+esc(formatDate(p.published_at))+'. Resumo editorial do HUB NOTÍCIA, sem redirecionamento para outro portal.</small>'+(p.notice?'<div class="notice-label">'+esc(p.notice)+'</div>':'')+(p.id==='hub-24'?'<p><a class="outline-btn" href="https://rh.g3pi.app.br/" target="_blank" rel="noopener noreferrer">Acessar recrutamento oficial da G3 ↗</a></p>':'')+'</div>';
           }"""
-          pat=re.compile(r'(?m)^[ \t]*function\s+openPost\s*\(p\)\s*\{[^\r\n]*
+          pat=re.compile(r'(?m)^[ \t]*function\s+openPost\s*\(p\)\s*\{[^\r\n]*$')
           after,count=pat.subn(lambda _:new_func,before)
           if count!=1:raise SystemExit(f'Esperada 1 função openPost, encontradas {count}; abortando')
           external_link=re.compile(r"""\$\('#modal-source'\)\.innerHTML='<a class="outline-btn" href="https://conectapiaui\.com\.br/emprego/" target="_blank" rel="noopener noreferrer">Consultar oportunidades na fonte original ↗</a>'""")
