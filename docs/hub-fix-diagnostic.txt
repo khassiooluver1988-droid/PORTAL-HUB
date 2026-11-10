@@ -1,2 +1,2 @@
-Esperada 1 função openPost, encontradas 0; abortando
+Marcador único de inicialização não encontrado
 Status Python: 1
