@@ -184,3 +184,19 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 - [x] Atualizar cache do script para v=018.
 - [x] Confirmar GitHub Pages nº 42924397493 concluído com sucesso.
 - [ ] Conferir visualmente em desktop e dispositivos móveis.
+
+
+## HUB-019 — alinhamento fino da logo e dos ícones de redes sociais
+**Data:** 10/11/2026, 20h42 (Brasília).
+**Código:** ATU-CAB/HUB-10112026-2042-019.
+**Projeto:** HUB NOTÍCIA.
+**Objetivo:** descer discretamente a logo HUB NOTÍCIA e subir um pouco os cinco ícones de redes sociais, sem mexer nas notícias ou na barra de busca.
+**Status:** alterações confirmadas no GitHub; implantação GitHub Pages nº 42925600169 em validação.
+
+- [x] Descer a logo 6 px com `position:relative;top:6px` no elemento `header .hub-mainhead .brand-link`.
+- [x] Subir os ícones mais 5 px (posição desktop de -12px para -17px e mobile de -47px para -52px).
+- [x] Preservar os tamanhos dos ícones, a ordem e as cores do WhatsApp, Instagram, X, YouTube e Facebook.
+- [x] Preservar campo Buscar, menu e acervo editorial.
+- [x] Renovar cache do script do cabeçalho para v=019.
+- [ ] Confirmar resultado do deploy nº 42925600169.
+- [ ] Verificação visual em dispositivos desktop e mobile.
