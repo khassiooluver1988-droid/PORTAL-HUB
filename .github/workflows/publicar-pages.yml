@@ -6,6 +6,9 @@ on:
     paths:
       - index.html
       - .nojekyll
+      - 'artigos/**'
+      - 'assets/**'
+      - destaque-impeachment-moraes.js
       - '.github/workflows/publicar-pages.yml'
   workflow_dispatch:
 
@@ -26,6 +29,23 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/index.html
+          cp -R artigos _site/artigos
+          cp -R assets _site/assets
+          cp destaque-impeachment-moraes.js _site/destaque-impeachment-moraes.js
+          python3 - <<'PY'
+          from pathlib import Path
+          html = Path('_site/index.html')
+          content = html.read_text(encoding='utf-8')
+          tag = '<script defer src="./destaque-impeachment-moraes.js"></script>'
+          if tag not in content:
+              if '</body>' not in content:
+                  raise SystemExit('HTML sem fechamento de body; publicacao bloqueada')
+              content = content.replace('</body>', tag + '\n</body>', 1)
+              html.write_text(content, encoding='utf-8')
+          assert 'destaque-impeachment-moraes.js' in html.read_text(encoding='utf-8')
+          PY
+          test -s _site/artigos/impeachment-moraes-senado-2027.html
+          test -s _site/assets/congresso-articulacao-ilustrativa.svg
           touch _site/.nojekyll
           test -s _site/index.html
       - name: Enviar arquivos para publicação
