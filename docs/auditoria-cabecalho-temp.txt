@@ -1,0 +1,88 @@
+Total characters: 1350618 lines: 335
+LINE 12 MATCH search TEXT     .topline{background:linear-gradient(90deg,#020c27,#082967,#03102d);color:#fff;font-size:.8rem;border-bottom:1px solid #2c558a}.topline .shell{display:flex;justify-content:space-between;gap:14px;align-items:center;min-height:38px}.top-group,.weather{display:flex;align-items:center;gap:10px}.top-dot{opacity:.45}.mini-icon{width:16px;height:16px;flex:none}.weather{color:#fff;white-space:nowrap}.weather strong{color:#ffe4a2}.weather-detail{color:#d4e1f6}.masthead{position:relative;overflow:hidden;background:radial-gradient(ellipse at 55% 140%,r
+LINE 19 MATCH social TEXT     .editorial-intro{padding:15px 18px;color:#fff;background:linear-gradient(110deg,#071b45,#0647a1);border-radius:13px;margin:25px 0 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.editorial-intro h2{margin:0;font-size:1.25rem}.editorial-intro p{margin:2px 0 0;color:#cce8ff;font-size:.82rem}.category-section{background:#fff;border:1px solid var(--stroke);border-radius:16px;margin-bottom:16px;padding:16px;scroll-margin-top:22px}.cat-head{display:flex;align-items:center;justify-content:space-between;border-bottom:2px
+LINE 20 MATCH search TEXT     .drawer-overlay{position:fixed;inset:0;background:rgba(0,11,36,.68);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}.drawer-overlay.open{opacity:1;pointer-events:auto}.drawer{position:fixed;z-index:61;top:0;bottom:0;left:0;width:min(370px,89vw);background:#fff;transform:translateX(-102%);transition:transform .27s;overflow-y:auto;box-shadow:20px 0 50px rgba(0,0,0,.26)}.drawer.open{transform:translateX(0)}.drawer-head{display:flex;align-items:center;justify-content:space-between;background:#061e52;color:white;padding:16px;gap
+LINE 21 MATCH social TEXT     @media(max-width:1050px){.mainhead{grid-template-columns:1fr 300px 1fr}.hero{min-height:395px}.tri-grid{grid-template-columns:1fr 1fr}.tri-grid .most-read{grid-column:1/-1}.ranking{display:grid;grid-template-columns:repeat(2,1fr);column-gap:18px}.opp-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1.5fr 1fr}.footer-social{gap:6px}}
+LINE 22 MATCH search TEXT     @media(max-width:680px){.shell{width:min(100% - 22px,460px)}.topline .shell{min-height:43px;align-items:start;flex-direction:column;justify-content:center;gap:1px;padding:5px 0}.topline{font-size:.68rem}.top-group{gap:6px}.weather-detail{font-size:.65rem}.mainhead{grid-template-columns:50px 1fr 50px;min-height:102px;gap:4px}.nav-trigger{padding:8px;width:43px;height:43px;justify-content:center;border-radius:10px;box-shadow:0 3px 0 #bc5100}.nav-trigger span{display:none}.nav-trigger svg{width:23px}.brand-link{width:100%;max-width:260px}.head
+LINE 67 MATCH search TEXT     .searchbox{
+LINE 93 MATCH search TEXT       .head-right .searchbox{
+LINE 239 MATCH <header TEXT   <header>
+LINE 259 MATCH search,buscar,pesquisa TEXT         <div class="head-right"><form id="search-form" class="searchbox" role="search"><label class="sr-only" for="search-field">Buscar no portal</label><input id="search-field" type="search" placeholder="Buscar no portal..." autocomplete="off"><button aria-label="Pesquisar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></button></form></div>
+LINE 263 MATCH </header TEXT   </header>
+LINE 264 MATCH id="menu,aria-label="menu,social TEXT   <div class="drawer-overlay" id="menu-overlay"></div><aside class="drawer" id="menu-drawer" aria-label="Menu geral" aria-hidden="true"><div class="drawer-head"><strong>HUB NOTÍCIA · MENU</strong><button id="close-menu" class="close-btn" aria-label="Fechar menu">×</button></div><nav class="drawer-body"><div class="drawer-label">Notícias</div><div class="drawer-links" id="news-menu-links"></div><hr><div class="drawer-label">Serviços e oportunidades</div><div class="drawer-links"><a href="#municipios">Municípios</a><a href="#enquete">Enquete</a><
+LINE 268 MATCH search,pesquisa TEXT     <div class="search-results panel" id="search-results" hidden><div class="panel-header"><h2>Resultados da pesquisa</h2><button id="close-search">Fechar</button></div><div class="panel-body" id="search-result-list"></div></div>
+LINE 280 MATCH social TEXT   <footer class="footer" id="institucional"><div class="shell"><div class="footer-grid"><div><div style="font-size:1.8rem;font-weight:900;letter-spacing:-.05em"><span style="color:#fff">hub</span><span style="color:#ff9100">◥</span></div><strong style="font-size:1rem;color:#fff">HUB NOTÍCIA</strong><p>Informação do Piauí, Brasil e mundo, em um único lugar. Projeto independente.</p></div><div><h3>Institucional</h3><div class="footer-links"><a href="#institucional" data-info="quem-somos">Quem Somos</a><a href="#publicidade">Anuncie Aqui</a><a hre
+LINE 284 MATCH pesquisa TEXT  const DATA={"posts": [{"id": "hub-1", "category": "Política", "title": "Francisco Pierot seguirá no comando da PGE-PI", "summary": "Rafael Fonteles anunciou a continuidade de Francisco Gomes Pierot Júnior na Procuradoria-Geral do Estado. O procurador integra a instituição desde 2010 e assumiu sua chefia em janeiro de 2023.", "published_at": "2026-11-08T15:00:00-03:00", "source_url": "https://conectapiaui.com.br/noticia/politica/rafael-fonteles-confirma-permanencia-de-francisco-pierot-a-frente-da-pge-pi-23709.html", "image_url": "https://conect
+LINE 326 MATCH search TEXT  $('#search-form').onsubmit=e=>{e.preventDefault();const input=$('#search-field');if(getComputedStyle(input).display==='none'){input.style.display='block';input.closest('.head-right').style.width='min(78vw,290px)';input.focus();return}const term=input.value.trim().toLocaleLowerCase('pt-BR');if(!term){input.focus();return}const list=latest(posts).filter(p=>(p.title+' '+p.category+' '+p.summary+' '+(p.city||'')).toLocaleLowerCase('pt-BR').includes(term));$('#search-result-list').innerHTML=list.length?list.map(p=>row(p)).join(''):'<p>Nenhuma notíc
+LINE 327 MATCH social TEXT  $('#footer-socials').innerHTML='';$('#drawer-socials').innerHTML='<span class="news-meta">Perfis oficiais ainda não informados.</span>';
+===== HEADER DOM =====
+TAG header: {}
+TAG div: {'class': 'topline hub-topline'}
+TAG div: {'class': 'shell hub-topline-inner hub-topline-three'}
+TAG div: {'class': 'hub-date-compact', 'aria-label': 'Data de hoje'}
+TAG svg: {}
+TAG rect: {}
+TAG path: {}
+TAG time: {'id': 'current-date'}
+TAG div: {'class': 'hub-weather-center', 'aria-label': 'Clima de Teresina'}
+TAG svg: {'class': 'hub-weather-symbol'}
+TAG path: {}
+TAG path: {}
+TAG div: {'class': 'hub-weather-main'}
+TAG span: {'class': 'hub-weather-kicker'}
+TAG strong: {'id': 'weather-current'}
+TAG div: {'class': 'hub-weather-description'}
+TAG span: {}
+TAG span: {'id': 'weather-description'}
+TAG small: {}
+TAG span: {'id': 'weather-feels'}
+TAG div: {'class': 'hub-world-label'}
+TAG div: {'class': 'hub-line-orange'}
+TAG div: {'class': 'masthead hub-masthead-image'}
+TAG div: {'class': 'shell mainhead hub-mainhead'}
+TAG button: {'class': 'nav-trigger', 'id': 'open-menu', 'aria-label': 'Abrir menu geral'}
+TAG svg: {}
+TAG path: {}
+TAG span: {}
+TAG a: {'href': '#inicio', 'class': 'brand-link', 'aria-label': 'Hub Notícia — página inicial'}
+TAG img: {'class': 'logo-original'}
+TAG div: {'class': 'head-right'}
+TAG form: {'id': 'search-form', 'class': 'searchbox', 'role': 'search'}
+TAG label: {'class': 'sr-only'}
+TAG input: {'id': 'search-field', 'type': 'search', 'placeholder': 'Buscar no portal...'}
+TAG button: {'aria-label': 'Pesquisar'}
+TAG svg: {}
+TAG circle: {}
+TAG path: {}
+TAG div: {'class': 'hub-line-orange'}
+===== SELECTORS =====
+div>     <div class="masthead hub-masthead-image">       <div class="shell mainhead hub-mainhead">         <button class="nav-trigger" id="open-menu" aria-label="Abrir menu geral" aria-controls="menu-drawer" aria-expanded="false"><svg viewBox="0 0 24 24" stroke="currentColor" st
+"masthead hub-masthead-image">       <div class="shell mainhead hub-mainhead">         <button class="nav-trigger" id="open-menu" aria-label="Abrir menu geral" aria-controls="menu-drawer" aria-expanded="false"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5
+asthead-image">       <div class="shell mainhead hub-mainhead">         <button class="nav-trigger" id="open-menu" aria-label="Abrir menu geral" aria-controls="menu-drawer" aria-expanded="false"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M3 6h18
+marca original Hub Notícia" width="1254" height="1254" decoding="async"></a>         <div class="head-right"><form id="search-form" class="searchbox" role="search"><label class="sr-only" for="search-field">Buscar no portal</label><input id="search-field" type="search" placeho
+b Notícia" width="1254" height="1254" decoding="async"></a>         <div class="head-right"><form id="search-form" class="searchbox" role="search"><label class="sr-only" for="search-field">Buscar no portal</label><input id="search-field" type="search" placeholder="Buscar no po
+rch-form" class="searchbox" role="search"><label class="sr-only" for="search-field">Buscar no portal</label><input id="search-field" type="search" placeholder="Buscar no portal..." autocomplete="off"><button aria-label="Pesquisar"><svg viewBox="0 0 24 24" fill="none" stroke="c
+="search"><label class="sr-only" for="search-field">Buscar no portal</label><input id="search-field" type="search" placeholder="Buscar no portal..." autocomplete="off"><button aria-label="Pesquisar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" 
+ portal</label><input id="search-field" type="search" placeholder="Buscar no portal..." autocomplete="off"><button aria-label="Pesquisar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></butto
+m></div>       </div>     </div>     <div class="hub-line-orange"></div>   </header>   <div class="drawer-overlay" id="menu-overlay"></div><aside class="drawer" id="menu-drawer" aria-label="Menu geral" aria-hidden="true"><div class="drawer-head"><strong>HUB NOTÍCIA · MENU</str
+s="hub-line-orange"></div>   </header>   <div class="drawer-overlay" id="menu-overlay"></div><aside class="drawer" id="menu-drawer" aria-label="Menu geral" aria-hidden="true"><div class="drawer-head"><strong>HUB NOTÍCIA · MENU</strong><button id="close-menu" class="close-btn"
+e"></div>   </header>   <div class="drawer-overlay" id="menu-overlay"></div><aside class="drawer" id="menu-drawer" aria-label="Menu geral" aria-hidden="true"><div class="drawer-head"><strong>HUB NOTÍCIA · MENU</strong><button id="close-menu" class="close-btn" aria-label="Fechar menu
+er" aria-label="Menu geral" aria-hidden="true"><div class="drawer-head"><strong>HUB NOTÍCIA · MENU</strong><button id="close-menu" class="close-btn" aria-label="Fechar menu">×</button></div><nav class="drawer-body"><div class="drawer-label">Notícias</div><div class="drawer-l
+idden="true"><div class="drawer-head"><strong>HUB NOTÍCIA · MENU</strong><button id="close-menu" class="close-btn" aria-label="Fechar menu">×</button></div><nav class="drawer-body"><div class="drawer-label">Notícias</div><div class="drawer-links" id="news-menu-links"></div><hr><div c
+r menu">×</button></div><nav class="drawer-body"><div class="drawer-label">Notícias</div><div class="drawer-links" id="news-menu-links"></div><hr><div class="drawer-label">Serviços e oportunidades</div><div class="drawer-links"><a href="#municipios">Municípios</a><a href="#enquet
+.noticiabr@gmail.com">Fale Conosco</a></div><div class="drawer-label">Redes sociais</div><div class="drawer-links" id="drawer-socials"></div></nav></aside>   <main id="conteudo" class="shell"><div id="demo-notice" class="demo-notice"><span><strong>HUB NOTÍCIA</strong> · Seleção 
+icle><div id="hero-secondary" class="hero-side" aria-label="Outras notícias em destaque"></div></section>     <div class="search-results panel" id="search-results" hidden><div class="panel-header"><h2>Resultados da pesquisa</h2><button id="close-search">Fechar</button></div><div class="p
+ class="hero-side" aria-label="Outras notícias em destaque"></div></section>     <div class="search-results panel" id="search-results" hidden><div class="panel-header"><h2>Resultados da pesquisa</h2><button id="close-search">Fechar</button></div><div class="panel-body" id="searc
+utras notícias em destaque"></div></section>     <div class="search-results panel" id="search-results" hidden><div class="panel-header"><h2>Resultados da pesquisa</h2><button id="close-search">Fechar</button></div><div class="panel-body" id="search-result-list"></div></div>     <
+"search-results panel" id="search-results" hidden><div class="panel-header"><h2>Resultados da pesquisa</h2><button id="close-search">Fechar</button></div><div class="panel-body" id="search-result-list"></div></div>     <section class="tri-grid" aria-label="Política, policial e
+anel-header"><h2>Resultados da pesquisa</h2><button id="close-search">Fechar</button></div><div class="panel-body" id="search-result-list"></div></div>     <section class="tri-grid" aria-label="Política, policial e últimas notícias"><div class="panel" id="politica"><div class="panel
+<section class="tri-grid" aria-label="Política, policial e últimas notícias"><div class="panel" id="politica"><div class="panel-header"><h2>POLÍTICA</h2><a href="#editoria-politica">Ver mais →</a></div><div class="panel-body"><div class="slide-visual" id="politics-slider"><div cl
+100%" id="slide-thumb"></div><div class="slide-overlay"><h3 id="slide-title">Carregando matérias...</h3></div><div class="slide-nav"><button id="slide-prev" aria-label="Notícia anterior">‹</button><button id="slide-next" aria-label="Próxima notícia">›</button></div></div><div 
+/button></div></div><div class="slide-dots" id="slide-dots"></div></div></div><div class="panel" id="cidades"><div class="panel-header"><h2>POLICIAL</h2><a href="#editoria-policial">Ver mais →</a></div><div class="panel-body list-stack" id="cities-list"></div></div><div class="pa
+ mais →</a></div><div class="panel-body list-stack" id="cities-list"></div></div><div class="panel most-read"><div class="panel-header" style="background:linear-gradient(100deg,#fb8600,#e15e00)"><h2>ÚLTIMAS NOTÍCIAS</h2><span style="font-size:.75rem">MAIS RECENTES</span></div><ol
+ion class="split-row" aria-label="Serviços públicos e solidariedade"><div class="panel lottery" id="loterias"><div class="panel-header"><h2>LOTERIAS CAIXA</h2><span style="font-size:.77rem">Resultados</span></div><div class="panel-body"><div><strong>Resultados oficiais</strong><p
+ank" rel="noopener noreferrer">Consultar na Caixa ↗</a></div></div><div class="panel solidary" id="solidario"><div class="panel-header"><h2>HUB SOLIDÁRIO</h2><span aria-hidden="true">♡</span></div><div class="panel-body"><div class="thumb is-orange" aria-hidden="true"><svg viewBo
+ba como ajudar →</button></div></div></div></section>     <section class="municipality panel" id="municipios"><div class="panel-header"><h2>MUNICÍPIOS DO PIAUÍ</h2><span style="font-size:.77rem">Regional</span></div><div class="panel-body"><div class="city-tabs" id="municipality-
+s" id="more-municipios">+ DE MUNICÍPIOS</button></div></section>     <section class="panel poll" id="enquete"><div class="panel-header"><h2>ENQUETES</h2><small>Hub Notícias</small></div><div class="poll-body"><p class="empty-data">Consulte ou participe na página original. A votaç
+/div><div><h3>Contato e redes sociais</h3><a href="mailto:hub.noticiabr@gmail.com">hub.noticiabr@gmail.com</a><div class="footer-social" id="footer-socials"></div><p style="font-size:.72rem;margin-top:9px">Links oficiais das redes aguardam confirmação dos perfis.</p></div></div><d
+e redes sociais</h3><a href="mailto:hub.noticiabr@gmail.com">hub.noticiabr@gmail.com</a><div class="footer-social" id="footer-socials"></div><p style="font-size:.72rem;margin-top:9px">Links oficiais das redes aguardam confirmação dos perfis.</p></div></div><div class="footer-bot
