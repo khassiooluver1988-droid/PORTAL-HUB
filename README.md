@@ -84,3 +84,21 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 - [x] Execução do GitHub Actions 42860681411 finalizada com sucesso.
 - [ ] Conferência visual em navegadores desktop/mobile e teste de compartilhamento com imagem raster.
 **Observação:** o Supabase do HUB ainda não está conectado ao portal estático; a nova matéria não foi inserida no acervo dinâmico da categoria Política.
+
+
+## HUB-011 — atualização da capa cinematográfica
+**Data:** 10/11/2026, 14h43 (Brasília).
+**Código:** ATU-IMG/HUB-10112026-0143-011.
+**Projeto:** Portal HUB NOTÍCIA.
+**Objetivo:** substituir a ilustração provisória pela arte cinematográfica que o responsável escolheu.
+**Status:** implementado no repositório e implantação do GitHub Pages confirmada pela execução 42867560676 (sucesso). Conferência visual independente em navegador não confirmada.
+
+- [x] Imagem escolhida preservada e otimizada em AVIF (1448×1086), armazenada em `assets/capa-congresso-moraes.avif`.
+- [x] Imagem principal atualizada em `artigos/impeachment-moraes-senado-2027.html`.
+- [x] Imagem do destaque da homepage atualizada em `destaque-impeachment-moraes.js`.
+- [x] Texto, categoria e acervo original preservados.
+- [x] Rotina temporária de importação removida após salvar o arquivo definitivo.
+- [x] Implantação de GitHub Pages concluída com sucesso para o commit da atualização do destaque.
+- [ ] Conferência visual efetiva em celular e computador.
+- [ ] Teste de prévia social (a propriedade Open Graph utiliza AVIF; compatibilidade depende do aplicativo).
+**Motivo da alteração:** adequar a apresentação da notícia à imagem aprovada pelo responsável.
