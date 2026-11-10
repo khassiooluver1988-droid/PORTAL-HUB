@@ -1,4 +1,4 @@
-name: Auditoria temporaria cabecalho HUB
+name: Auditoria temporaria navegacao HUB
 on:
   push:
     paths:
@@ -6,46 +6,34 @@ on:
 permissions:
   contents: write
 jobs:
-  inspeccionar:
+  analisar:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extrair trechos para ajuste seguro
+      - name: Inspecionar navegacao das noticias
         run: |
           python3 - <<'PY'
-          import pathlib,re,html
-          s=pathlib.Path("index.html").read_text(encoding="utf-8")
-          lines=s.splitlines()
-          needles=['<header','</header','search','buscar','pesquisa','sidebar','sidemenu','menu-toggle','nav-toggle','id="menu','class="menu','aria-label="menu','menu-btn','menuItem','menu-item','social']
-          out=[f'Total characters: {len(s)} lines: {len(lines)}']
-          for i,line in enumerate(lines):
-              ml=[x for x in needles if x.lower() in line.lower()]
-              if ml and (i<1000):
-                  out.append('LINE '+str(i+1)+' MATCH '+','.join(ml)+' TEXT '+line[:550])
-                  if len(out)>170:break
-          from html.parser import HTMLParser
-          class Audit(HTMLParser):
-              def __init__(self):
-                  super().__init__();self.header=0;self.records=[]
-              def handle_starttag(self,tag,attrs):
-                  d=dict(attrs)
-                  if tag=='header':self.header+=1
-                  if self.header and len(self.records)<200:
-                      t={k:v for k,v in attrs if k in ('class','id','aria-label','placeholder','href','type','role','title','onclick')}
-                      self.records.append(f'TAG {tag}: {str(t)[:270]}')
-              def handle_endtag(self,tag):
-                  if tag=='header' and self.header:self.header-=1
-          a=Audit();a.feed(s)
-          out+=['===== HEADER DOM =====']+a.records
-          out+=['===== SELECTORS =====']
-          for m in list(re.finditer(r'(?i)(?:class|id|placeholder|aria-label)=[\x22\x27][^\x22\x27]*(?:menu|nav|search|buscar|pesquisa|social|header)[^\x22\x27]*[\x22\x27]',s))[:75]:
-              out.append(s[max(0,m.start()-115):m.end()+145].replace('\n',' ')[:400])
-          p=pathlib.Path('docs/auditoria-cabecalho-temp.txt')
-          p.parent.mkdir(exist_ok=True)
-          p.write_text('\n'.join(out)[:43000],encoding='utf-8')
+          from pathlib import Path
+          import re,json,collections,urllib.parse
+          s=Path('index.html').read_text(encoding='utf-8')
+          ls=s.splitlines()
+          out=[f'CHARACTERS {len(s)}, LINES {len(ls)}']
+          out.append('===== CSS TARGETS =====')
+          for n,line in enumerate(ls[:240],1):
+              if any(q in line.lower() for q in ['modal','article','news','drawer','item-link','searchbox']):out.append(f'LINE {n}: {line[:4500]}')
+          out.append('===== HTML AND SCRIPT (except embedded JSON) =====')
+          for n,line in enumerate(ls[235:],236):
+              if len(line)>100000:
+                  out.append(f'LINE {n}: HUGE DATA ({len(line)} characters), JSON sample {line[:1500]}')
+              else:out.append(f'LINE {n}: {line[:9000]}')
+          out.append('===== INLINE LINKS OR TARGETS =====')
+          for match in list(re.finditer(r'(?:source_url|conectapiaui|openArticle|showArticle|newsModal|openModal|window\.open|location\.href|href=)',s,re.I))[:65]:
+              out.append('AT '+str(match.start())+': '+s[max(0,match.start()-140):match.start()+180].replace('\n',' '))
+          p=Path('docs/auditoria-navegacao-temp.txt')
+          p.write_text('\n'.join(out)[:100000],encoding='utf-8')
           PY
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/auditoria-cabecalho-temp.txt
-          git commit -m "Diagnosticar elementos do cabeçalho HUB" || true
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/auditoria-navegacao-temp.txt
+          git commit -m 'HUB: auditar links de noticias e abertura interna' || true
           git push origin HEAD:main
