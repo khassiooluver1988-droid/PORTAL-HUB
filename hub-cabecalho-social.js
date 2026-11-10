@@ -6,7 +6,7 @@ const socialLabels = [['whatsapp','WhatsApp'],['instagram','Instagram'],['x','X'
 const officialUrls={whatsapp:'',instagram:'',x:'',youtube:'',facebook:''};
 const styles = [
 'header .hub-mainhead .head-right{display:flex!important;flex-direction:column!important;align-items:flex-end!important;justify-content:center;position:relative;overflow:visible!important}',
-'#hub-header-socials{display:flex;position:relative;top:-5px;flex-wrap:nowrap;justify-content:flex-end;align-items:center;gap:5px;margin:0 0 7px;white-space:nowrap;z-index:8}',
+'#hub-header-socials{display:flex;position:relative;top:-12px;flex-wrap:nowrap;justify-content:flex-end;align-items:center;gap:5px;margin:0 0 7px;white-space:nowrap;z-index:8}',
 '#hub-header-socials .hub-social-icon{width:23px;height:23px;display:inline-flex;justify-content:center;align-items:center;border-radius:50%;background:#fff;border:1px solid rgba(7,30,82,.15);box-shadow:0 2px 8px rgba(4,24,53,.18);flex:0 0 auto;line-height:1}',
 '#hub-header-socials .hub-social-icon svg{display:block;width:13px;height:13px;fill:currentColor}',
 '#hub-header-socials [data-platform="whatsapp"]{color:#159b58}',
@@ -20,7 +20,7 @@ const styles = [
 '#menu-drawer .drawer-links a{font-size:1.13rem!important;line-height:1.5!important;font-weight:650!important;padding-top:11px!important;padding-bottom:11px!important}',
 '#menu-drawer .drawer-label{font-size:1.02rem!important;font-weight:800!important}',
 '#menu-drawer .drawer-head strong{font-size:1.14rem!important}',
-'@media(max-width:680px){header .hub-mainhead{min-height:137px!important;padding-top:34px!important;overflow:visible!important}header .hub-mainhead .head-right{min-width:0!important;overflow:visible!important}#hub-header-socials{position:absolute;top:-40px;right:0;margin:0;gap:5px}#hub-header-socials .hub-social-icon{width:22px;height:22px}#hub-header-socials .hub-social-icon svg{width:12px;height:12px}#search-form .hub-search-label{display:none}#menu-drawer .drawer-links a{font-size:1.1rem!important;line-height:1.48!important}}',
+'@media(max-width:680px){header .hub-mainhead{min-height:137px!important;padding-top:34px!important;overflow:visible!important}header .hub-mainhead .head-right{min-width:0!important;overflow:visible!important}#hub-header-socials{position:absolute;top:-47px;right:0;margin:0;gap:5px}#hub-header-socials .hub-social-icon{width:22px;height:22px}#hub-header-socials .hub-social-icon svg{width:12px;height:12px}#search-form .hub-search-label{display:none}#menu-drawer .drawer-links a{font-size:1.1rem!important;line-height:1.48!important}}',
 '@media(max-width:365px){#hub-header-socials{gap:4px;right:0}#hub-header-socials .hub-social-icon{width:20px;height:20px}}'
 ].join('\n');
 function install(){
