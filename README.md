@@ -102,3 +102,21 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 - [ ] Conferência visual efetiva em celular e computador.
 - [ ] Teste de prévia social (a propriedade Open Graph utiliza AVIF; compatibilidade depende do aplicativo).
 **Motivo da alteração:** adequar a apresentação da notícia à imagem aprovada pelo responsável.
+
+
+## HUB-012 — headline e revisão editorial
+**Data:** 10/11/2026, 16h01 (Brasília).
+**Código:** ATU-RED/HUB-10112026-1601-012.
+**Projeto:** HUB NOTÍCIA.
+**Motivo:** aplicar a manchete aprovada e consolidar a notícia de Política com informações atribuídas a fontes verificáveis.
+**Status:** concluído no repositório e implantado pelo GitHub Pages (GitHub Actions #42880903431, sucesso); verificação visual pública em navegador não disponível nesta sessão.
+
+- [x] Manchete iniciando por “Saiba quem são os 10 senadores…” aplicada no artigo, no título HTML e na prévia Open Graph.
+- [x] Subtítulo jornalístico e texto completo revisados e formatados com trechos importantes em destaque.
+- [x] Lista dos dez parlamentares e distinção entre mandatos atuais e a legislatura de 2027 verificadas com fontes.
+- [x] Matéria contextualiza tramitação, oposição, disputa pela Mesa e a ausência de impeachment aprovado.
+- [x] Capa cinematográfica escolhida preservada em `assets/capa-congresso-moraes.avif` (correspondência visual com a imagem apresentada).
+- [x] Destaque da página inicial atualizado com a nova manchete, mantendo o link para a notícia.
+- [x] Deploy executado com sucesso; acervo anterior do index.html preservado.
+- [ ] Conferência visual em desktop/celular e verificação de prévia social em aplicativos externos.
+**Nota:** a matéria permanece publicada por página estática; sem inserção na base editorial Supabase.
