@@ -136,3 +136,18 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 - [x] Preservar a headline, texto, menu e acervo existente.
 - [x] Conferir os arquivos modificados e o resultado de sucesso da implantação.
 - [ ] Testar visualmente em navegadores desktop e celular após propagação do Pages.
+
+
+## HUB-016 — redução dos ícones sociais no cabeçalho
+**Data:** 10/11/2026, 20h25 (Brasília).
+**Código:** ATU-CAB/HUB-10112026-2025-016.
+**Projeto:** HUB NOTÍCIA.
+**Motivo:** reduzir o tamanho visual dos cinco ícones sociais acima da busca após retorno do responsável.
+**Status:** arquivo e workflow atualizados no GitHub; publicação GitHub Pages em conferência (run 42923206453).
+
+- [x] Redimensionar contêineres dos ícones no desktop de 31 para 23 px.
+- [x] Redimensionar contêineres dos ícones no mobile de 28 para 22 px e em telas estreitas de 26 para 20 px.
+- [x] Reduzir o pictograma interno e o espaçamento entre os cinco ícones.
+- [x] Manter os ícones acima da pesquisa e preservar busca, menu e conteúdo das matérias.
+- [x] Renovar cache do script do cabeçalho para a versão v=016.
+- [ ] Confirmar visualmente a renderização desktop/mobile após deploy.
