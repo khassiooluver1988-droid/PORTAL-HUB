@@ -11,18 +11,37 @@ on:
 
 permissions:
   contents: read
-  pages: write
 
 concurrency:
   group: publicar-hub-pages
   cancel-in-progress: false
 
 jobs:
-  publicar:
+  preparar:
     runs-on: ubuntu-latest
     steps:
-      - name: Solicitar publicação da versão atual
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-        run: gh api --method POST "repos/$GH_REPO/pages/builds"
+      - name: Obter arquivos do portal
+        uses: actions/checkout@v4
+      - name: Preparar site estático
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          touch _site/.nojekyll
+          test -s _site/index.html
+      - name: Enviar arquivos para publicação
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  publicar:
+    needs: preparar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar portal no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
