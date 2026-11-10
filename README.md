@@ -168,3 +168,18 @@ Referência histórica do planejamento: `HUB-MENU-20261108-01` (provisória, con
 - [x] Atualizar versão de cache do script do cabeçalho para v=017.
 - [x] Confirmar sucesso do deploy nº 42923744821.
 - [ ] Conferir visualmente em desktop/mobile.
+
+
+## HUB-018 — ajuste fino da altura dos ícones sociais
+**Data:** 10/11/2026, 20h34 (Brasília).
+**Código:** ATU-CAB/HUB-10112026-2034-018.
+**Projeto:** HUB NOTÍCIA.
+**Motivo:** atender à solicitação de subir um pouco mais os cinco ícones sociais acima da busca.
+**Status:** código publicado no repositório; workflow de implantação nº 42924397493 em verificação.
+
+- [x] Elevar o bloco de redes sociais em mais 7 px (desktop: top de -5px para -12px).
+- [x] Elevar o bloco em mais 7 px no celular (top de -40px para -47px).
+- [x] Manter tamanhos aprovados dos ícones, disposição horizontal, cores e espaçamento.
+- [x] Preservar campo Buscar, menu, publicações e acervo existente.
+- [x] Atualizar cache do script para v=018.
+- [ ] Confirmar GitHub Pages e conferir visualmente os dispositivos.
